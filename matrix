@@ -1,0 +1,14 @@
+class Matrix:
+    def __init__(self, matrix_string):
+        self.matrix = matrix_string
+
+    def row(self, index):
+        x = self.matrix.split('\n')
+        x = x[index-1].split()
+        x = [int(x[i]) for i in range(len(x))]
+        return x
+
+    def column(self, index):
+       y = [row.split()[index-1] for row in self.matrix.split('\n')]
+       y = [int(y[i]) for i in range(len(y))]
+       return y
